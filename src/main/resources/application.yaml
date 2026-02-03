@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: andes-fin
+  datasource:
+    url: jdbc:mariadb://localhost:3307/db_andesfin #${AUTHORS_DB_URL}
+    username: batman #${AUTHORS_DB_USER}
+    password: null..pass #${AUTHORS_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+
+
+    server:
+      port: ${SERVER_PORT:8080}
