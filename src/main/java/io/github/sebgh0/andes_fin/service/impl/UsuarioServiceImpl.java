@@ -46,7 +46,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuario = new Usuario();
         usuario.setNombre(dto.getNombre());
         usuario.setEmail(dto.getEmail());
-        usuario.setCapital_disponible(dto.getCapital_disponible());
+        usuario.setCapitalDisponible(dto.getCapitalDisponible());
 
         Usuario saved = repo.save(usuario);
 
@@ -59,7 +59,7 @@ public class UsuarioServiceImpl implements UsuarioService {
                 .id(usuario.getId())
                 .nombre(usuario.getNombre())
                 .email(usuario.getEmail())
-                .capital_disponible(usuario.getCapital_disponible())
+                .capitalDisponible(usuario.getCapitalDisponible())
                 .build();
     }
 

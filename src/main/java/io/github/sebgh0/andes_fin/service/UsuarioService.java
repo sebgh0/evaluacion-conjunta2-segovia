@@ -10,9 +10,9 @@ public interface UsuarioService {
 
     List<UsuarioDTO> getAll();
 
-    UsuarioDTO getById(UUID id);
+    //UsuarioDTO getById(UUID id);
 
-    UsuarioDTO create(CreateUsuarioDTO dto);
+    //UsuarioDTO create(CreateUsuarioDTO dto);
 
 
 
