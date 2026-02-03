@@ -6,20 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
-@Builder
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class ProductoDTO {
-
-    private UUID id;
+@AllArgsConstructor
+@Builder
+public class ProductoResultadoDTO {
 
     private String nombre;
-    private String descripcion;
-    private BigDecimal costo;
-    private BigDecimal porcentajeRetorno;
-    private  boolean activo;
-
+    private BigDecimal precio;
+    private BigDecimal porcentajeGanancia;
+    private BigDecimal gananciaEsperada;
 }

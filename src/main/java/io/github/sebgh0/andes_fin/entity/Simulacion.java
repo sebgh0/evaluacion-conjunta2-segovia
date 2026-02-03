@@ -8,7 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -30,17 +30,16 @@ public class Simulacion {
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
-    private LocalDate fecha_simulacion;
+    private LocalDateTime fechaSimulacion;
 
     @Column(precision = 10, scale = 2)
-    private BigDecimal capital_disponible;
+    private BigDecimal capitalDisponible;
 
     @Column(precision = 10, scale = 2)
-    private  BigDecimal ganancia_total;
+    private  BigDecimal gananciaTotal;
 
-    @ManyToMany
-    @JoinColumn(name = "productos_financiero_id")
-    private List<ProductoFinanciero> producto;
+    @OneToMany(mappedBy = "simulacion", cascade = CascadeType.ALL)
+    private List<SimulacionProducto> productosSeleccionados;
 
 
 }

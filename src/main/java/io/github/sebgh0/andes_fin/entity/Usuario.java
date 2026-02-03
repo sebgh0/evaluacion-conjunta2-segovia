@@ -28,5 +28,5 @@ public class Usuario {
     private  String email;
 
     @Column(precision = 10, scale = 2)
-    private BigDecimal capital_disponible;
+    private BigDecimal capitalDisponible;
 }

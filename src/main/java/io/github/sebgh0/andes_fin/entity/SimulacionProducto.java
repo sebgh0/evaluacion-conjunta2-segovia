@@ -10,23 +10,24 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Table(name = "productos_financiero")
+@Table(name = "simulacion_producto")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class ProductoFinanciero {
+public class SimulacionProducto {
 
     @Id
     @GeneratedValue
     @UuidGenerator
     private UUID id;
 
-    @Column(length = 30, nullable = false)
-    private String nombre;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "simulacion_id")
+    private Simulacion simulacion;
 
-    @Lob
-    @Column(nullable = false)
-    private String descripcion;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "producto_id")
+    private ProductoFinanciero producto;
 
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal costo;
@@ -34,9 +35,6 @@ public class ProductoFinanciero {
     @Column(precision = 5, scale = 2, nullable = false)
     private BigDecimal porcentajeRetorno;
 
-    @Column(nullable = false)
-    private  boolean activo;
-
-
-
+    @Column(precision = 10, scale = 2, nullable = false)
+    private BigDecimal gananciaCalculada;
 }

@@ -25,6 +25,6 @@ public class CreateUsuarioDTO {
     private  String email;
 
     @NotNull
-    @Min(0)
-    private BigDecimal capital_disponible;
+    @DecimalMin("0.0")
+    private BigDecimal capitalDisponible;
 }

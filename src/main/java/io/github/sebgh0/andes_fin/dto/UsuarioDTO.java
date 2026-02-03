@@ -19,5 +19,5 @@ public class UsuarioDTO {
 
     private  String nombre;
     private  String email;
-    private BigDecimal capital_disponible;
+    private BigDecimal capitalDisponible;
 }

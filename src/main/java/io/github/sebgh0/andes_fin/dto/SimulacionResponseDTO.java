@@ -9,30 +9,28 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
 
-@Builder
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class SimulacionResponseDTO {
 
 
     private UUID id;
+    private UUID usuarioId;
+    private LocalDateTime fechaSimulacion;
 
-    private Usuario usuario;
+    private BigDecimal capitalDisponible;
+    private BigDecimal costoTotal;
+    private BigDecimal capitalRestante;
+    private BigDecimal gananciaTotal;
+    private BigDecimal retornoTotalPorcentaje;
 
-
-    private LocalDate fecha_simulacion;
-
-
-    private BigDecimal capital_disponible;
-
-
-    private  BigDecimal ganancia_total;
-
-
-    private List<ProductoFinanciero> producto;
+    private List<ProductoResultadoDTO> productosSeleccionados;
+    private String mensaje;
 }

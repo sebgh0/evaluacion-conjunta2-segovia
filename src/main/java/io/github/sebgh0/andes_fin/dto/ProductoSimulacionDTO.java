@@ -3,33 +3,28 @@ package io.github.sebgh0.andes_fin.dto;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CreateProductoDTO {
+@AllArgsConstructor
+@Builder
+public class ProductoSimulacionDTO {
 
     @NotBlank
-    @Size(max = 30)
     private String nombre;
 
-    @NotBlank
-    private String descripcion;
+    @NotNull
+    @DecimalMin("0.0")
+    private BigDecimal precio;
 
     @NotNull
     @DecimalMin("0.0")
-    private BigDecimal costo;
+    private BigDecimal porcentajeGanancia;
 
-    @NotNull
-    @DecimalMin("0.0")
-    private BigDecimal porcentajeRetorno;
-
-    @NotNull
-    private Boolean activo;
 }
